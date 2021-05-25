@@ -1,0 +1,52 @@
+<app-menu></app-menu>
+<h3 class="title">
+    <span>Self</span> Transfer
+</h3>
+<form [formGroup]="form"  method="POST">
+<div class="centerele">
+    <div class="box" style="margin-left:23%;  font-family:Verdana; font-size: 16px;">
+
+        <label>Amount:</label>
+        <input type="number" placeholder="Enter Ammount" formControlName="amount" id="amount"><br><br>
+        <label>Message:</label>
+        <input type="text" placeholder="Type Message(optional)" formControlName="message" id="messagw"><br><br>
+        Debitted from:<br><br>
+        <table style="margin-left:43%;">
+            <tr>
+                <td>
+                    Bank Account
+                </td>
+
+            </tr>
+        </table><br>
+        <button class="btn-sub" data-toggle="modal" data-target="#myModal">Send Money</button><br><br>
+    </div>
+    <div class="modal" id="myModal" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Enter Password</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <input type="password" id="password"  formControlName="password" placeholder="Enter Your password" required>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="onsubmit()" data-dismiss="modal">Proceed</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<br><br>
+<app-footer></app-footer>

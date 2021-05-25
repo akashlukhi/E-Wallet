@@ -1,0 +1,85 @@
+<app-menu></app-menu>
+<h3 class="title">
+    <span>SIGN</span> UP</h3>
+<div class="centerele">
+    <form  [formGroup]="myform" (ngSubmit)="onsubmit()" method="POST" >
+        <div class="box" style="margin-left:23%;  font-family:Verdana; font-size: 16px;">
+            <table style="margin-left:14%;">
+                <tr>
+                    <td> <label for="name"><b>Name:</b></label></td>
+                    <td><input type="text" placeholder="Last Middle First" name="name" id="name" formControlName="name" required>
+                        <br><br></td>
+                </tr>
+                <tr>
+                    <td><label for="email"><b>Email ID:</b></label></td>
+                    <td><input type="text" placeholder="Enter Email Address" name="email" id="email" formControlName="email" required><br><br></td>
+                </tr>
+                <tr>
+                    <td><label for="password"><b>Password:</b></label></td>
+                    <td><input type="password" placeholder="Enter Password" name="password" required id="password" formControlName="password"
+                            onchange="passwordvalidate()" /><br>
+                        <div>
+                            <p id="pass-p" style="color:red; font-size: 11pt; display: none;">Password must be at least
+                                8 digit*</p>
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="Re-password"><b>Re-Enter Password:</b></label></td>
+                    <td><input type="password" placeholder="Re-Enter Password" id="re-password" required
+                            onchange="repasswordvalidate()" /><br>
+                        <div>
+                            <p id="repass-p" style="color:red; font-size: 11pt; display: none;">Both Passwords are Not
+                                Same*</p>
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="phn"><b>Phone Number:</b></label></td>
+                    <td><input type="text" placeholder="Enter phone number" name="phone" required id="phone" formControlName="phone"
+                            onchange="phonevalidate()"><br>
+                        <div>
+                            <p id="phone-p" style="color:red; font-size: 11pt; display: none;">Mobile Number must be 10
+                                digit*</p>
+                        </div><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="bank"><b>Bank Name:</b></label></td>
+                    <td><input type="text" placeholder="Enter Bank name" name="bank" id="bank" formControlName="bank" required><br><br></td>
+                </tr>
+                <tr>
+                <tr>
+                    <td><label for="branch"><b>Branch Name:</b></label></td>
+                    <td><input type="text" placeholder="Enter Branch name" name="branch" id="branch" formControlName="branch" required><br><br></td>
+                </tr>
+                <tr>
+                    <td><label for="ifsc"><b>IFSC Code:</b></label></td>
+                    <td><input type="text" placeholder="Enter IFSC code" name="ifsc" required formControlName="ifsc" id="ifsc"><br><br></td>
+                </tr>
+                <tr>
+                <tr>
+                    <td><label for="accn"><b>Account Number:</b></label></td>
+                    <td><input type="number" placeholder="Enter Account Number" name="account" required id="account" formControlName="account"
+                            onchange="accountvalidate()"><br>
+                        <div>
+                            <p id="account-p" style="color:red; font-size: 11pt; display: none;">Account Number must be
+                                14 digit*</p>
+                        </div><br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="birthday"><b>Birthday:</b></label></td>
+                    <td><input type="date" id="birthday" name="birthday" id="birthday" formControlName="birthday"><br><br></td>
+                </tr>
+                <!-- <tr>
+                    <td><label for="img"><b>Select Profile Image:</b></label></td>
+                    <td><input type="file" formControlName="file" (change)="handleFileInput($event.target.files)" id="img" name="img" accept="image/*"><br><br></td>
+                </tr> -->
+                <br><br>
+            </table>
+            <button id="submit" type="submit"  class="btn-sub">Signup</button><br><br>
+        </div>
+    </form>
+</div>

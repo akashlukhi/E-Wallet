@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<h3 class="title">
+    <span>LOG</span> IN
+</h3>
+<div class="centerele">
+    <div class="box" style="margin-left:23%;  font-family:Verdana; font-size: 16px;">
+        <form class="needs-validation" [formGroup]="myform" (ngSubmit)="onsubmit()" method="POST" novalidate>
+            <table style="margin-left:22%;">
+
+                <tr>
+                    <td><br><label for="mail"><b>Email ID:</b></label></td>
+                    <td><input class="form-control" type="text" placeholder="Enter your email-id" name="email"
+                            formControlName="email" id="email" required></td>
+                </tr>
+                <tr>
+                    <td><br><label for="psw"><b>Password:</b></label></td>
+                    <td><input class="form-control" type="password" placeholder="Enter your Password" name="password"
+                            formControlName="password" id="psw" required></td>
+                </tr>
+            </table>
+            <br>
+            <button type="submit" class="btn-sub">Log in</button>
+            <button class="btn-sub" style="margin-left: 10%"><a routerLink="/signup" style="color: aliceblue;">Create
+                    Account</a></button>
+            <br><br>
+        </form>
+    </div>
+</div>
+<router-outlet></router-outlet>

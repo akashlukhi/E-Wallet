@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+<h3 class="title">
+    <span>STATEMENTS FOR PAST
+        100 </span>TRANSECTIONS
+</h3>
+<div class="centerele">
+    <form action="">
+        <table class="statement" border="0.5px" style="width:90%; margin-left:5%; font-size:150%">
+            <tr>
+                <th>Name.</th>
+                <th>Description</th>
+                <th>Credited</th>
+                <th>Debited</th>
+                <th>From/To</th>
+            </tr>
+            <tbody *ngFor='let transaction of history'>
+                <tr *ngIf="!transaction.Credited && transaction.Debited" style="color: rgb(223, 70, 70)">
+                    <td>{{transaction.Name}}</td>
+                    <td>{{transaction.Description}}</td>
+                    <td>{{transaction.Credited}}</td>
+                    <td>{{transaction.Debited}}</td>
+                    <td>{{transaction.From_To}}</td>
+                </tr>
+                <tr *ngIf="!transaction.Debited && transaction.Credited" style="color: green">
+                    <td>{{transaction.Name}}</td>
+                    <td>{{transaction.Description}}</td>
+                    <td>{{transaction.Credited}}</td>
+                    <td>{{transaction.Debited}}</td>
+                    <td>{{transaction.From_To}}</td>
+                </tr>
+                <tr *ngIf="!transaction.Debited && !transaction.Credited" style="color: rgb(175, 173, 22)">
+                    <td>{{transaction.Name}}</td>
+                    <td>{{transaction.Description}}</td>
+                    <td>{{transaction.Credited}}</td>
+                    <td>{{transaction.Debited}}</td>
+                    <td><button (click)="pay(this.transaction)" class="btn btn-outline-primary"
+                            style="width: 75px">Pay</button> &nbsp;&nbsp;&nbsp;<button
+                            class="btn btn-outline-danger" (click)="delete(this.transaction)">Decline</button></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </form>
+</div>
+<br><br><br><br>
+<app-footer></app-footer>

@@ -1,0 +1,101 @@
+<app-menu></app-menu>
+<h3 class="title">
+    <span>Online water</span> Bill Payment
+</h3>
+<div class="centerele">
+    <div class="box" style="margin-left:23%;  font-family:Verdana; font-size: 16px;">
+        <a href="#" style="color: blue;" data-toggle="modal" data-target="#viewmodal">
+            <font size="+1">View Sample Bill</font>
+        </a><br><br>
+        <div class="modal" id="viewmodal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Watter Bill Sample</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <img src="./assets/img/Watterbill.jpg" height="540px" width="400px">
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <form [formGroup]="form" method="POST">
+            <table style="margin-left:24%;">
+                <tr>
+                    <td>
+                        <label>Customer No:</label>
+                    </td>
+                    <td>
+                        <input type="number" name="customer" formControlName="customer"
+                            placeholder="Enter Customer number" required><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Amount:</label>
+                    </td>
+                    <td>
+                        <input type="number" formControlName="amount" required placeholder="Enter Ammount"><br><br>
+                    </td>
+                </tr>
+            </table>
+            Debitted from:<br><br>
+            <table style="margin-left:40%;">
+                <tr>
+                    <td>
+                        Wallet
+                    </td>
+                    <td>
+                        <input type="radio" id="wallet" formControlName="from" value="wallet" checked name="from">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Bank Account
+                    </td>
+                    <td>
+                        <input type="radio" id="bank" formControlName="from" value="bank" name="from">
+                    </td>
+                </tr>
+            </table>
+            <button class="btn-sub" data-toggle="modal" data-target="#myModal">Send Money</button><br><br>
+            <div class="modal" id="myModal" data-backdrop="static">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Enter Password</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <input type="password" id="password" required formControlName="password"
+                                placeholder="Enter Your password" required>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" (click)="onsubmit()"
+                                data-dismiss="modal">Proceed</button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<br><br>
+<app-footer></app-footer>

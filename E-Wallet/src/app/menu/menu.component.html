@@ -1,0 +1,55 @@
+<div class="menu" style="z-index:1000;">
+    <a on-click="openmenu()" style="float: left;cursor:pointer; color:white;"><i class="fa fa-bars"></i><span>
+            Menu</span></a>
+    <div *ngIf="isLoggedIn; else loggedOut">
+        <a routerLink="/home" (click)="logout()"><i class="fa fa-sign-out"></i> Log Out</a>
+    </div>
+    <ng-template #loggedOut>
+        <a routerLink="/login">Log In/Sign Up</a>
+    </ng-template>
+    <a routerLink="/home" fragment="help"><i class="fa fa-question-circle"></i> Help</a> &nbsp;
+    <a routerLink="/home" fragment="contact"><i class="fa fa-volume-control-phone"></i> Contact Us</a> &nbsp;
+    <a routerLink="/home" fragment="about"><i class="fa fa-address-card"></i> About </a> &nbsp;
+    <a routerLink="/home"><i class="fa fa-fw fa-home"></i> Home</a> &nbsp;
+</div>
+<br><br>
+<div id="mymenu" class="overlay" style="z-index:10000;" (mouseleave)="closemenu()">
+    <div class="overlay-content">
+        <div id="dummy">
+            <img style="border-radius: 50%; width:100px; display:block; margin-left:30%; height:100px; border:2px solid; border-color:cornflowerblue;"
+                src="assets/img/aboutme.jpg">&nbsp;
+        </div>
+        <div *ngFor='let u of user'>
+            {{hide()}}
+            <img style="border-radius: 50%; width:100px; display:block; margin:auto; height:100px; border:2px solid; border-color:cornflowerblue;"
+                src="{{u.Image_url}}">&nbsp;
+            <p style="color: aliceblue; text-align:center; font-size:medium">{{u.Username}}</p>
+        </div>
+        <br>
+        <a routerLink="/profile"><i style="padding-right: 6%" class="fa fa-user" aria-hidden="true"></i> Profile</a>
+        <a routerLink="/statement"><i style="padding-right: 6%" class="fa fa-history" aria-hidden="true"></i>
+            Payment History</a>
+        <a routerLink="/change-password"><i style="padding-right: 6%" class="fa fa-key" aria-hidden="true"></i> Change
+            Password</a>
+        <a id="expand" (click)="animate()" style="cursor:pointer;"><i style="padding-right: 6%" class="fa fa-exchange"
+                aria-hidden="true"></i> Money
+            Transer</a>
+        <div class="options hidden">
+            <a routerLink="/toaccount" style="margin: 0% 0% 0% 22%; padding:0%; font-size:16px;" class="span"><i
+                    class="fa fa-angle-double-right" aria-hidden="true"></i>
+                To Account</a>
+            <a routerLink="/tocontact" style="margin: 5% 0% 0% 22%; padding:0%; font-size:16px;" class="span"><i
+                    class="fa fa-angle-double-right" aria-hidden="true"></i>
+                To Contact</a>
+            <a routerLink="/self-transfer" style="margin: 5% 0% 4% 22%; padding:0%; font-size:16px;" class="span"><i
+                    class="fa fa-angle-double-right" aria-hidden="true"></i>
+                To Self</a>
+        </div>
+        <a routerLink="/check-balance"><i style="padding-right: 6%" class="fa fa-credit-card" aria-hidden="true"></i>
+            Check Balance</a>
+        <a routerLink="/request-money"><i style="padding-right: 6%" class="fa fa-ticket" aria-hidden="true"></i> Request
+            Money</a>
+        <a routerLink="/policies"><i style="padding-right: 6%" class="fa fa-ravelry" aria-hidden="true"></i>Polices</a>
+    </div>
+</div>
+<router-outlet></router-outlet>

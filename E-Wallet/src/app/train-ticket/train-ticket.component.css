@@ -1,0 +1,107 @@
+.centerele{
+ 
+  text-align: center;
+}
+td{
+  text-align: right;
+}
+input[type=text],input[type=email],input[type=date],input[type=password],input[type=time],input[type=file],input[type=number], textarea{
+    border-radius: 25px;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.9);
+    padding: 9px;
+    border: 1px solid #eee;
+    width: 310px;
+    outline: none;
+    margin: 10px;
+}
+input:focus , textarea:focus {
+  border: 2px solid #333;
+}
+input[type=radio]
+{
+  border-radius: 100%;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.9);
+    padding: 9px;
+    border: none;
+    outline: none;
+    margin: 10px;
+}
+
+#show{
+  border-radius: 25px;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.9);
+    padding: 9px;
+    border: 1px solid #eee;
+    width: 330px;
+    outline: none;
+    margin: 10px;
+}
+.btn-sub {
+    margin-top: 2%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    width: 150px;
+    background:#333;
+    color:#eee;
+    cursor:pointer;
+    transition: all 400ms;
+    outline: none;
+  }
+  .btn-sub:hover {
+    background: rgb(38, 157, 255);
+    outline: none;
+    transition: all 400ms;
+  }
+
+.box{
+    width: 800px;
+    padding-left: .7%;
+    padding-right: .7%; 
+    padding-top: 2%;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 5px; 
+    margin: 2%;
+    border: 2px;
+}
+
+.box td{
+    text-align: right;
+}
+.title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 40px;
+  color: rgb(38, 157, 255);
+  margin-bottom: 0px;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+}
+
+.title span {
+  color: rgb(67, 67, 182);
+}
+
+.title::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 3px;
+  width: 440px;
+  background: rgb(38, 157, 255);
+}
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10px;
+  width: 10px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: rgb(38, 157, 255);
+}
+

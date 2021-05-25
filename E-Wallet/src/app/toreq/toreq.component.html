@@ -1,0 +1,42 @@
+<app-menu></app-menu>
+<h3 class="title">
+    <span>Request</span> Money
+</h3>
+<form [formGroup]="form" method="POST">
+    <div class="centerele">
+        <div class="box" style="margin-left:23%;  font-family:Verdana; font-size: 16px;">
+            <table style="margin-left:24%;">
+                <tr>
+                    <td>
+                        <label>Contact No:</label>
+                    </td>
+                    <td>
+
+                        <input type="number" name="contact" formControlName="contact" placeholder="Enter Contact number"
+                            required><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Amount:</label>
+                    </td>
+                    <td>
+                        <input type="number" formControlName="amount" required placeholder="Enter Ammount"><br><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Message:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="message" formControlName="message"
+                            placeholder="Type Message(optional)"><br><br>
+                    </td>
+                </tr>
+            </table>
+            <button class="btn-sub" type="submit" (click)="onsubmit()">Request Money</button><br><br><br>
+        </div>
+    </div>
+</form>
+<br><br><br><br><br><br>
+<app-footer></app-footer>

@@ -1,0 +1,101 @@
+<app-menu></app-menu>
+<div class="centerele">
+    <form [formGroup]="form" method="POST">
+        <div *ngFor='let userdetails of user'>
+            <img style="border-radius: 50%; width:125px; height:125px; border:2px solid; border-color:cornflowerblue;"
+                src="{{userdetails.Image_url}}">
+            <br>
+            
+            <input type="file" formControlName="file" (change)="handleFileInput($event.target.files)" id="img"
+                name="img" accept="image/*"><br><br>
+
+            <table style="margin-left:19%;">
+                <tr>
+                    <td>
+                        <label>Your Name:</label>
+                    </td>
+                    <td>
+                        <label><input type="text" placeholder="{{userdetails.Username}}" formControlName="name" required
+                                value="{{userdetails.Username}}"></label>
+                    </td>
+                    <td style="padding-left:50px">
+                        <label>Bank Balance:</label>
+                    </td>
+                    <td *ngFor='let bankdetails of bank'>
+                        <label><input type="number" name="branvh" placeholder="branch"
+                                value="{{bankdetails.Bank_balance}}" readonly></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Bank Name:</label>
+                    </td>
+                    <td>
+                        <label><input type="text" name="bnknm" value="Bank Of India" value="{{userdetails.Bank_name}}"
+                                readonly></label>
+                    </td>
+                    <td style="padding-left:50px">
+                        <label>Email ID:</label>
+                    </td>
+                    <td>
+                        <label><input type="text" placeholder="Linked Email is here" value="{{userdetails.Email}}"
+                                readonly></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Bank IFSC Code:</label>
+                    </td>
+                    <td>
+                        <label><input type="text" name="bnkifsc" value="BOI1342" value="{{userdetails.Ifsc_code}}"
+                                readonly></label>
+                    </td>
+                    <td style="padding-left:50px">
+                        <label>Password:</label>
+                    </td>
+                    <td>
+                        <label><input type="text" placeholder="Password" value="{{userdetails.Password}}"
+                                readonly></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Phone Number:</label>
+                    </td>
+                    <td>
+                        <label><input type="text" name="phn" placeholder="Phone Number" value="{{userdetails.Phone_no}}"
+                                readonly></label>
+                    </td>
+                    <td style="padding-left:50px">
+                        <label>Account Number:</label>
+                    </td>
+                    <td>
+                        <label><input type="text" placeholder="Account Number" value="{{userdetails.Acc_no}}"
+                                readonly></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Branch Name:</label>
+                    </td>
+                    <td>
+                        <label><input type="text" name="branvh" placeholder="branch" value="{{userdetails.Branch_name}}"
+                                readonly></label>
+                    </td>
+                    <td>
+                        <label>Birth Date:</label>
+                    </td>
+                    <td>
+                        <label><input type="date" placeholder="birthdate" value="{{userdetails.Birthday}}"
+                                readonly></label>
+                    </td>
+                </tr>
+            </table>
+
+            <button class="btn-sub" (click)="onsubmit()">Apply</button><br><br>
+        </div>
+    </form>
+</div>
+<br><br>
+<app-footer></app-footer>

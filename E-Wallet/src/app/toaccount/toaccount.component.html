@@ -1,0 +1,84 @@
+<app-menu></app-menu>
+<h3 class="title">
+    <span>To Account </span>Money Tranfer
+</h3>
+<form [formGroup]="form"  method="POST">
+<div class="centerele">
+    <div class="box" style="margin-left:23%;  font-family:Verdana; font-size: 16px;">
+        <table style="margin-left:24%;">
+            <tr>
+                <td>
+                    <label>Account No:</label>
+                </td>
+                <td>
+
+                    <input type="number" id="number" formControlName="account" placeholder="Enter Account number" required><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Amount:</label>
+                </td>
+                <td>
+                    <input type="number"  formControlName="amount" required  placeholder="Enter Ammount"><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Message:</label>
+                </td>
+                <td>
+                    <input type="text" id="message" formControlName="message" placeholder="Type Message(optional)"><br><br>
+                </td>
+            </tr>
+        </table>
+            <table style="margin-left:40%;">
+                Debitted from:<br><br>
+                <tr>
+                    <td>
+                        Wallet
+                    </td>
+                    <td>
+                        <input type="radio" id="wallet" formControlName="from" value="wallet" checked name="from">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Bank Account
+                    </td>
+                    <td>
+                        <input type="radio" id="bank" formControlName="from" value="bank" name="from">
+                    </td>
+                </tr>
+            </table>
+            <button class="btn-sub" data-toggle="modal" data-target="#myModal">Send Money</button><br><br>
+    </div>
+    <div class="modal" id="myModal" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Enter Password</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <input type="password" id="password" required formControlName="password" placeholder="Enter Your password" required>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="onsubmit()" data-dismiss="modal">Proceed</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<br><br>
+<app-footer></app-footer>

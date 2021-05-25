@@ -1,0 +1,97 @@
+<app-menu></app-menu>
+<h3 class="title">
+    <span>Your </span> Balance
+</h3>
+<div class="centerele" *ngFor='let userdetails of user'>
+
+    <div class="jumbotron">
+        <h1>Your Money: <input type="text" readonly value="{{userdetails.Wallet_balance}}"></h1>
+        <br><br>
+        <h3 class="title">
+            <span>Your </span> Wallet Limit
+        </h3><br><br>
+        <div *ngIf="ten">
+            <div class="progress" style="width: 500px;box-shadow: 3px 3px 3px #000000;  margin-left:33%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                    style="width:10%; background-color:rgb(89, 0, 255);">
+                    <span class="sr-only">BALANCE LIMIT</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="twenty">
+            <div class="progress" style="width: 500px;box-shadow: 3px 3px 3px #000000;  margin-left:33%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                    style="width:20%; background-color:#2d49eb">
+                    <span class="sr-only">BALANCE LIMIT</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="thirty">
+            <div class="progress" style="width: 500px;box-shadow: 3px 3px 3px #000000;  margin-left:33%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                    style="width:30%; background-color:rgb(0, 183, 255);">
+                    <span class="sr-only">BALANCE LIMIT</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="fourty">
+            <div class="progress" style="width: 500px;box-shadow: 3px 3px 3px #000000;  margin-left:33%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                    style="width:40%; background-color:rgb(22, 252, 137);">
+                    <span class="sr-only">BALANCE LIMIT</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="fifty">
+            <div class="progress" style="width: 500px;box-shadow: 3px 3px 3px #000000;  margin-left:33%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                    style="width:50%; background-color:rgb(21, 241, 50);">
+                    <span class="sr-only">BALANCE LIMIT</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="sixty">
+            <div class="progress" style="width: 500px;box-shadow: 3px 3px 3px #000000;  margin-left:33%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                    style="width:60%; background-color:#1fe287">
+                    <span class="sr-only">BALANCE LIMIT</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="seventy">
+            <div class="progress" style="width: 500px;box-shadow: 3px 3px 3px #000000;  margin-left:33%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                    style="width:70%; background-color:#85e418">
+                    <span class="sr-only">BALANCE LIMIT</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="eighty">
+            <div class="progress" style="width: 500px;box-shadow: 3px 3px 3px #000000;  margin-left:33%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                    style="width:80%; background-color:#e9d520;">
+                    <span class="sr-only">BALANCE LIMIT</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="ninety">
+            <div class="progress" style="width: 500px;box-shadow: 3px 3px 3px #000000;  margin-left:33%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                    style="width:50%; background-color:#ec9026">
+                    <span class="sr-only">BALANCE LIMIT</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="hundread">
+            <div class="progress" style="width: 500px;box-shadow: 3px 3px 3px #000000;  margin-left:33%;">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                    style="width:98%; background-color:red;">
+                    <span class="sr-only">BALANCE LIMIT</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
+<app-footer></app-footer>
